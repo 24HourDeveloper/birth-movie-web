@@ -31,7 +31,7 @@ function App() {
   const getDate = async () => {
     setIsLoading(true);
     try {
-      const response = await fetch(`http://localhost:3000/${date}`);
+      const response = await fetch(`${import.meta.env.VITE_API_BASE_URL}/${date}`);
       const data = await response.json();
       if (data.status === 404) {
         setError(data.error);
